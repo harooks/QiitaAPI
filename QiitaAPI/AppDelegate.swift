@@ -10,10 +10,17 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        // Create a new window property
+        window = UIWindow(frame: UIScreen.main.bounds)
+        // Set custom LoginViewController as root
+        let vc = ViewController()
+        let navigationVC = UINavigationController(rootViewController: vc)
+        window?.rootViewController = navigationVC
+        window?.makeKeyAndVisible()
+
         return true
     }
 

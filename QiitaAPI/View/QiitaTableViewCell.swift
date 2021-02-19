@@ -32,7 +32,7 @@ class QiitaTableViewCell: UITableViewCell {
     
     let bodyTextLabel: UILabel = {
         let label = UILabel()
-        label.text = "something in here"
+        label.text = "dummy"
         label.font = .systemFont(ofSize: 15)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
