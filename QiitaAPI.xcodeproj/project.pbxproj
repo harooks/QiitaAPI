@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F56EFAB225E00DFE0083E940 /* DogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56EFAB125E00DFE0083E940 /* DogTableViewCell.swift */; };
 		F5C2E13E25DA57800067F22F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C2E13D25DA57800067F22F /* AppDelegate.swift */; };
 		F5C2E14025DA57800067F22F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C2E13F25DA57800067F22F /* SceneDelegate.swift */; };
 		F5C2E14225DA57800067F22F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C2E14125DA57800067F22F /* ViewController.swift */; };
@@ -16,7 +17,6 @@
 		F5C2E15525DA57840067F22F /* QiitaAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C2E15425DA57840067F22F /* QiitaAPITests.swift */; };
 		F5C2E16025DA57840067F22F /* QiitaAPIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C2E15F25DA57840067F22F /* QiitaAPIUITests.swift */; };
 		F5C2E17225DA5A8B0067F22F /* ApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C2E17125DA5A8B0067F22F /* ApiModel.swift */; };
-		F5C2E18225DB95B30067F22F /* QiitaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C2E18125DB95B30067F22F /* QiitaTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F56EFAB125E00DFE0083E940 /* DogTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogTableViewCell.swift; sourceTree = "<group>"; };
 		F5C2E13A25DA57800067F22F /* QiitaAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QiitaAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5C2E13D25DA57800067F22F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5C2E13F25DA57800067F22F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,7 +53,6 @@
 		F5C2E15F25DA57840067F22F /* QiitaAPIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaAPIUITests.swift; sourceTree = "<group>"; };
 		F5C2E16125DA57840067F22F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5C2E17125DA5A8B0067F22F /* ApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiModel.swift; sourceTree = "<group>"; };
-		F5C2E18125DB95B30067F22F /* QiitaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +111,7 @@
 				F5C2E14625DA57830067F22F /* Assets.xcassets */,
 				F5C2E14825DA57830067F22F /* LaunchScreen.storyboard */,
 				F5C2E14B25DA57830067F22F /* Info.plist */,
-				F5C2E18125DB95B30067F22F /* QiitaTableViewCell.swift */,
+				F56EFAB125E00DFE0083E940 /* DogTableViewCell.swift */,
 			);
 			path = QiitaAPI;
 			sourceTree = "<group>";
@@ -274,7 +274,7 @@
 			files = (
 				F5C2E17225DA5A8B0067F22F /* ApiModel.swift in Sources */,
 				F5C2E14225DA57800067F22F /* ViewController.swift in Sources */,
-				F5C2E18225DB95B30067F22F /* QiitaTableViewCell.swift in Sources */,
+				F56EFAB225E00DFE0083E940 /* DogTableViewCell.swift in Sources */,
 				F5C2E13E25DA57800067F22F /* AppDelegate.swift in Sources */,
 				F5C2E14025DA57800067F22F /* SceneDelegate.swift in Sources */,
 			);

@@ -8,10 +8,10 @@
 import UIKit
 
 class QiitaTableViewCell: UITableViewCell {
-    var qiita: Qiita? {
+    var dog: Dog? {
         didSet {
-            bodyTextLabel.text = qiita?.title
-            let url = URL(string: qiita?.user.profileImageUrl ?? "")
+            bodyTextLabel.text = dog?.name
+            let url = URL(string: dog?.image.url ?? "")
             do {
                 let data = try Data(contentsOf: url!)
                 let image = UIImage(data: data)
