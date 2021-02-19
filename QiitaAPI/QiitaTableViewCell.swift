@@ -31,9 +31,12 @@ class QiitaTableViewCell: UITableViewCell {
     }()
     
     let bodyTextLabel: UILabel = {
-        let label = UILabel()
-        label.text = "something in here"
+        let label = UILabel() 
+        label.text = "something in here something in here something in here something in here something in here"
         label.font = .systemFont(ofSize: 15)
+        label.sizeToFit()
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -49,11 +52,15 @@ class QiitaTableViewCell: UITableViewCell {
             userImageView.widthAnchor.constraint(equalToConstant: 50),
             userImageView.heightAnchor.constraint(equalToConstant: 50),
             
+            bodyTextLabel.heightAnchor.constraint(equalToConstant: 60),
             bodyTextLabel.leadingAnchor.constraint(equalTo: userImageView.trailingAnchor, constant: 20),
             bodyTextLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+//            bodyTextLabel.widthAnchor.constraint(equalToConstant: 330),
+            bodyTextLabel.rightAnchor.constraint(equalTo: rightAnchor
+            ),
             ].forEach{ $0.isActive = true }
         
-        userImageView.layer.cornerRadius = 50 / 2
+        userImageView.layer.cornerRadius = 25
     }
     
     required init?(coder: NSCoder) {
