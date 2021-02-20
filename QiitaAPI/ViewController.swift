@@ -8,27 +8,63 @@
 import UIKit
 import SafariServices
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UISearchBarDelegate {
     
     var dogArray = [Dog]()
     
+    var filteredDogArray = [Dog]()
+
+    
+    var isSearchBarEmpty: Bool {
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+    
+    var isFiltering: Bool {
+        return searchController.isActive
+    }
+    
     let tableView: UITableView = {
         let tv = UITableView()
+        tv.translatesAutoresizingMaskIntoConstraints = false
         return tv
+    }()
+
+//    let searchBar: UISearchBar = {
+//        let sb = UISearchBar()
+//        sb.searchBarStyle = UISearchBar.Style.prominent
+////        sb.translatesAutoresizingMaskIntoConstraints = false
+//        sb.placeholder = " Search"
+//        sb.sizeToFit()
+//        print("where is the search bar")
+//        return sb
+//    }()
+    
+    let searchController: UISearchController = {
+        let sc = UISearchController(searchResultsController: nil)
+        return sc
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        view.addSubview(tableView)
-        tableView.frame.size = view.frame.size
+        setView()
         
+        tableView.frame.size = view.frame.size
+        filteredDogArray = dogArray
         tableView.delegate = self
         tableView.dataSource = self
+//        searchController.searchBar = self
         tableView.register(DogTableViewCell.self, forCellReuseIdentifier: "Cell")
-        navigationItem.title = "犬種一覧"
         getQiitaApi()
+
         print("view did load")
+    }
+    
+    func setView() {
+        navigationItem.title = "犬種一覧"
+        view.addSubview(tableView)
+        searchController.searchBar.delegate = self
+        tableView.tableHeaderView = searchController.searchBar
+        definesPresentationContext = true
     }
     
     private func getQiitaApi() {
@@ -52,7 +88,7 @@ class ViewController: UIViewController {
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
                     }
-                    print("json:", dog)
+//                    print("json:", dog)
                 } catch (let err) {
                     print("can't retreive data", err)
                 }
@@ -62,21 +98,54 @@ class ViewController: UIViewController {
         task.resume()
         
     }
+    
+ 
+
+ 
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filteredDogArray = []
+        if searchText == "" {
+            filteredDogArray = dogArray
+        } else {
+            for dog in dogArray{
+                if dog.name.lowercased().contains(searchText.lowercased()) {
+                    filteredDogArray.append(dog)
+                }
+
+            }
+        }
+//            print("searchBar method ran")
+        
+        self.tableView.reloadData()
+    }
 
 
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 100
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dogArray.count
+        
+        if isFiltering {
+            return filteredDogArray.count
+        } else {
+            return dogArray.count
+        }
+       
+
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! DogTableViewCell
-        cell.dog = dogArray[indexPath.row]
+        
+        if isFiltering {
+            cell.dog = filteredDogArray[indexPath.row]
+        } else {
+            cell.dog = dogArray[indexPath.row]
+        }
+
         return cell
     }
     

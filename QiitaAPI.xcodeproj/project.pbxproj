@@ -106,12 +106,12 @@
 				F5C2E13D25DA57800067F22F /* AppDelegate.swift */,
 				F5C2E13F25DA57800067F22F /* SceneDelegate.swift */,
 				F5C2E14125DA57800067F22F /* ViewController.swift */,
+				F56EFAB125E00DFE0083E940 /* DogTableViewCell.swift */,
 				F5C2E17025DA5A6C0067F22F /* Model */,
 				F5C2E14325DA57800067F22F /* Main.storyboard */,
 				F5C2E14625DA57830067F22F /* Assets.xcassets */,
 				F5C2E14825DA57830067F22F /* LaunchScreen.storyboard */,
 				F5C2E14B25DA57830067F22F /* Info.plist */,
-				F56EFAB125E00DFE0083E940 /* DogTableViewCell.swift */,
 			);
 			path = QiitaAPI;
 			sourceTree = "<group>";
